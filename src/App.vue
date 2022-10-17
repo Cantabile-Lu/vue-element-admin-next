@@ -1,9 +1,12 @@
 <script setup lang="ts">
-console.log("摩羯阿婆");
+const value = $ref("来了!老弟");
+const nums = [12, 13, "14"];
+
+console.log(nums);
 </script>
 
 <template>
-  <div>Hello Word</div>
+  <el-button>{{ value }}</el-button>
 </template>
 
 <style scoped>
