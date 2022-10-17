@@ -1,12 +1,14 @@
 <script setup lang="ts">
-const value = $ref("来了!老弟");
+const size = $ref("small");
 const nums = [12, 13, "14"];
 
 console.log(nums);
 </script>
 
 <template>
-  <el-button>{{ value }}</el-button>
+  <el-config-provider :size="size">
+    <router-view />
+  </el-config-provider>
 </template>
 
 <style scoped>
