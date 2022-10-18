@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 import type { App } from "vue";
 
+import Layout from "@/layout/index.vue";
 const routes: RouteRecordRaw[] = [
   {
     path: "/login",
@@ -9,6 +10,8 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: "/",
+    redirect: "/dashboard",
+    component: Layout,
     children: [
       {
         path: "dashboard",
