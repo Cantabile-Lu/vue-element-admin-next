@@ -1,10 +1,9 @@
 <template>
   <el-aside
     width="200px"
-    style="border: 1px solid blue; height: 100vh; box-sizing: border-box"
+    style="border: 1px solid yellow; height: 100vh; box-sizing: border-box"
   >
     <Logo />
-
     <Sidebar />
   </el-aside>
 </template>

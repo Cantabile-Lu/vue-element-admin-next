@@ -1,8 +1,7 @@
-import { defineStore } from "pinia";
 import { ref } from "vue";
 
 const isExpand = ref(false);
-export const useExpand = defineStore("Expand", () => {
+export const useExpand = () => {
   function expandHandler() {
     isExpand.value = !isExpand.value;
   }
@@ -14,4 +13,4 @@ export const useExpand = defineStore("Expand", () => {
     getExpand,
     expandHandler
   };
-});
+};

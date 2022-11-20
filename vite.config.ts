@@ -12,6 +12,9 @@ export default defineConfig({
     })
   ],
 
+  server: {
+    open: true
+  },
   resolve: {
     alias: {
       "@": resolve(__dirname, "src")

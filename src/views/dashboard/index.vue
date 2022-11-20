@@ -1,5 +1,5 @@
 <template>
-  <div>dashboard</div>
+  <div>这里是首页仪表盘</div>
 </template>
 
 <script setup lang="ts">
