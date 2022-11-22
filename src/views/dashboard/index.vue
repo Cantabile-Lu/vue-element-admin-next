@@ -1,5 +1,7 @@
 <template>
-  <div>这里是首页仪表盘</div>
+  <div>
+    <el-button v-for="item in 3">item{{ item }}</el-button>
+  </div>
 </template>
 
 <script setup lang="ts">
