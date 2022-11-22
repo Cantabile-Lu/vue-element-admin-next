@@ -6,6 +6,7 @@
 * add axios loading ([5a43c3a](https://github.com/luwenhai99999/vue-element-admin-next/commit/5a43c3a39277a842c02304b72ef5ce36d0332875))
 * **commitizen:** add commitizen ([02c1908](https://github.com/luwenhai99999/vue-element-admin-next/commit/02c190839dc01d85bc27d2049a21726dbe993226))
 * **element:** install element-plus ([054125a](https://github.com/luwenhai99999/vue-element-admin-next/commit/054125a84ea2a436c336a122c5244bf038890dd3))
+* **install changelog:** install CHANGELOG ([d502df9](https://github.com/luwenhai99999/vue-element-admin-next/commit/d502df91abe8786d3c9bd2790723e11ab1c49ee2))
 * **layout:** add layout ([0906e98](https://github.com/luwenhai99999/vue-element-admin-next/commit/0906e980ed471150f4567db4598e3cba40ed655a))
 * **new pro:** add comment section ([18754fb](https://github.com/luwenhai99999/vue-element-admin-next/commit/18754fb45051585bdb06a1f7ffeae5438554dadd))
 * **pinia:** install pinia ([370bc48](https://github.com/luwenhai99999/vue-element-admin-next/commit/370bc488881672bc3660a48f8c73398df30c9074))
