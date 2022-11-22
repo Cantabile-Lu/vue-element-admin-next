@@ -11,13 +11,14 @@ interface IRepson {
 }
 
 function getList() {
-  return vnRequest.request<IRepson>({
+  return vnRequest.get<IRepson>({
     url: "http://123.207.32.32:8000/home/multidata",
-    method: "get"
+    loading: true
   });
 }
 getList().then((res) => {
-  console.log(res);
+  console.log(res.success);
+  console.log(res.data);
 });
 
 // vnRequest.request({

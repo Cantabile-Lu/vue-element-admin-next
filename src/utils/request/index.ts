@@ -13,7 +13,6 @@ export const vnRequest = new Service({
     requestInterceptorCatch: (err) => {
       return err;
     },
-
     responseInterceptor: (res) => {
       const data = res.data;
       if (data.status === "success") {

@@ -47,7 +47,9 @@ class Service {
     this.instance.interceptors.response.use(
       (response) => {
         this.loading?.close();
-        return response;
+
+        const { data } = response;
+        return data;
       },
       (err) => {
         this.loading?.close();
@@ -55,7 +57,8 @@ class Service {
       }
     );
   }
-  request<T>(config: IVNRequestConfig): Promise<T> {
+
+  request<T>(config: IVNRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       // 单独处理config
       if (config.interceptors?.requestInterceptor) {
@@ -70,17 +73,33 @@ class Service {
         .request<any, T>(config)
         .then((res) => {
           if (config.interceptors?.responseInterceptor) {
-            // res = config.interceptors.responseInterceptor(res);
+            res = config.interceptors.responseInterceptor(res);
           }
           resolve(res);
         })
         .catch((err) => {
-          return err;
+          reject(err);
         })
         .finally(() => {
           this.showLoading = DEFAULT_LOADING;
         });
     });
+  }
+
+  get<T>(config: IVNRequestConfig<T>): Promise<T> {
+    return this.request<T>({ ...config, method: "GET" });
+  }
+  post<T>(config: IVNRequestConfig<T>): Promise<T> {
+    return this.request<T>({ ...config, method: "POST" });
+  }
+  delete<T>(config: IVNRequestConfig<T>): Promise<T> {
+    return this.request<T>({ ...config, method: "DELETE" });
+  }
+  put<T>(config: IVNRequestConfig<T>): Promise<T> {
+    return this.request<T>({ ...config, method: "PUT" });
+  }
+  patch<T>(config: IVNRequestConfig<T>): Promise<T> {
+    return this.request<T>({ ...config, method: "PATCH" });
   }
 }
 
