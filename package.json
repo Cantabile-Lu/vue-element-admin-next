@@ -1,7 +1,7 @@
 {
   "name": "vue-element-admin-next",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -9,7 +9,8 @@
     "prepare": "husky install",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix  ",
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
-    "log":"conventional-changelog -p angular -i CHANGELOG.md -s -r 0 "
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 ",
+    "release": "standard-version"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
@@ -36,6 +37,7 @@
     "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "sass": "^1.55.0",
+    "standard-version": "^9.5.0",
     "typescript": "^4.6.4",
     "unplugin-vue-components": "^0.22.8",
     "vite": "^3.1.0",
