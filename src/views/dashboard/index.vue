@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button v-for="item in 3">item{{ item }}</el-button>
+    <el-button v-for="item in 3" :key="item">item{{ item }}</el-button>
   </div>
 </template>
 
