@@ -17,12 +17,12 @@ class Service {
     // 实列拦截器
     this.instance.interceptors.request.use(
       this.interceptors?.requestInterceptor,
-      this.interceptors?.requestInterceptorCatch
+      this.interceptors?.requestInterceptorCatch,
     );
 
     this.instance.interceptors.response.use(
       this.interceptors?.responseInterceptor,
-      this.interceptors?.responseInterceptorCatch
+      this.interceptors?.responseInterceptorCatch,
     );
 
     //  全局拦截器
@@ -33,7 +33,7 @@ class Service {
             lock: true,
             fullscreen: true,
             background: "rgba(195,195,195, 0.2)",
-            text: "正在加载中"
+            text: "正在加载中",
           });
         }
         return config;
@@ -41,7 +41,7 @@ class Service {
       (err) => {
         this.loading?.close();
         return err;
-      }
+      },
     );
 
     this.instance.interceptors.response.use(
@@ -54,7 +54,7 @@ class Service {
       (err) => {
         this.loading?.close();
         return err;
-      }
+      },
     );
   }
 

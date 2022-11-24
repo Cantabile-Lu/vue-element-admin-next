@@ -10,3 +10,10 @@ export interface IVNRequestConfig<T = AxiosResponse>
   interceptors?: IRequestInterceptors<T>;
   loading?: boolean;
 }
+
+
+export interface Result<T = any> {
+  code: number;
+  message: string;
+  result: T;
+}

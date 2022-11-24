@@ -1,20 +1,19 @@
 <template>
   <div class="common-layout">
-    <el-container>
-      <Aside />
-      <el-container direction="vertical">
-        <Header />
-        <el-container direction="vertical">
-          <Main />
-          <Footer />
-        </el-container>
-      </el-container>
-    </el-container>
+    <component :is="theme[active]" :collapse="collapse" />
   </div>
 </template>
 
-<script setup lang="ts">
-import { Footer, Main, Header, Aside } from "@/layout/components";
+<script lang="ts" setup>
+import { ref } from "vue";
+import defaultTheme from "./theme/default/index.vue";
+
+const theme = {
+  defaultTheme
+};
+const active = ref("defaultTheme");
+
+const collapse = ref(false);
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>
