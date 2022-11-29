@@ -1,9 +1,10 @@
-import { createRouter, createWebHashHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import type { App } from "vue";
-
+import { setupPermissions } from "./permissions";
 import Layout from "@/layout/index.vue";
-const routes: RouteRecordRaw[] = [
+
+export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/login",
     component: () => import("@/views/login/index.vue")
@@ -12,6 +13,9 @@ const routes: RouteRecordRaw[] = [
     path: "/",
     redirect: "/dashboard",
     component: Layout,
+    meta: {
+      name: "仪表盘"
+    },
     children: [
       {
         path: "dashboard",
@@ -20,16 +24,30 @@ const routes: RouteRecordRaw[] = [
     ]
   }
 ];
+export const asyncRoutes: RouteRecordRaw[] = [
+  {
+    path: "details",
+    redirect: "/details",
+    component: Layout,
+    meta: {
+      name: "详情"
+    },
+    children: [
+      {
+        path: "details",
+        component: () => import("@/views/details/index.vue")
+      }
+    ]
+  }
+];
 export const router = createRouter({
-  routes,
+  routes: constantRoutes,
   history: createWebHashHistory()
 });
 
-// router.beforeEach((to) => {
-//   if (to.path !== "/login") {
-//     console.log("不是去登录页面");
-//   }
-// });
 export function initRouter(app: App<Element>) {
+  // 路由拦截
+  setupPermissions(router);
   app.use(router);
+  return router;
 }

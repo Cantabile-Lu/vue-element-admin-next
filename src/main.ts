@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "normalize.css";
 import "element-plus/theme-chalk/el-loading.css";
+
 import { initStore } from "@/store";
 import { initRouter } from "@/router";
 

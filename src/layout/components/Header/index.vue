@@ -1,14 +1,20 @@
 <template>
-  <el-header style="border: 1px solid red">
-    <el-switch v-model="isExpand" />
+  <el-header>
+    <Expand />
+    <div>这里是姓名</div>
   </el-header>
 </template>
 
-<script setup lang="ts">
-import { useExpand } from "@/hooks/useExpand";
-
-const expan = useExpand();
-const isExpand = expan.getExpand();
+<script lang="ts" setup>
+import Expand from "./expand";
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped>
+.el-header {
+  padding: 0 10px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style>

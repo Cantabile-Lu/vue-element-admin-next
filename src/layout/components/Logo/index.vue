@@ -1,24 +1,43 @@
 <template>
-  <div class="logo">
-    <img src="../../../../public/vite.svg" />
-  </div>
+  <router-link to="/">
+    <div
+      :style="{ width: collapse ? setting.minWidth : setting.maxWidth }"
+      class="logo"
+    >
+      <img alt="logo" src="../../../../public/vite.svg" />
+      <div v-show="!collapse" class="title">{{ setting.title }}</div>
+    </div>
+  </router-link>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import { useSettingStore } from "@/store/useSetting";
+import { storeToRefs } from "pinia";
+import setting from "@/config/index";
 
-<style scoped lang="scss">
+const settingStore = useSettingStore();
+const { collapse } = storeToRefs(settingStore);
+</script>
+
+<style lang="scss" scoped>
 .logo {
   height: 60px;
-  width: 100%;
-  will-change: filter;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #6b9bcc;
+  color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: width 0.3s;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo img:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+a {
+  text-decoration: none;
 }
 </style>

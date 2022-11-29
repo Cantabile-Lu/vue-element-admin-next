@@ -7,13 +7,16 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import defaultTheme from "./theme/default/index.vue";
+import { useSettingStore } from "@/store/useSetting";
+import { storeToRefs } from "pinia";
 
 const theme = {
   defaultTheme
 };
 const active = ref("defaultTheme");
 
-const collapse = ref(false);
+const settingStore = useSettingStore();
+const { collapse } = storeToRefs(settingStore);
 </script>
 
 <style lang="scss" scoped></style>
