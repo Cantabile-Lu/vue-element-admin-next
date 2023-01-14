@@ -50,7 +50,7 @@ module.exports = {
       },
     ],
     'space-before-function-paren': 'off',
-
+    'vue/no-reserved-component-names': 'off',
     'vue/attributes-order': 'off',
     'vue/v-on-event-hyphenation': 'off',
     'vue/multi-word-component-names': 'off',

@@ -1,47 +1,63 @@
 <template>
   <el-aside :width="collapse ? setting.minWidth : setting.maxWidth">
-    <el-scrollbar>
-      <Logo v-if="setting.showLogo" class="fixed-logo" />
-      <div v-if="setting.showLogo" style="height: 60px"></div>
-      <div class="sidebar">
-        <Sidebar />
-      </div>
-    </el-scrollbar>
+    <Logo v-if="setting.showLogo" />
+    <div class="sidebar">
+      <el-menu
+        :collapse="collapse"
+        :collapse-transition="false"
+        :default-active="$route.path"
+      >
+        <template v-for="(item, index) in routes" :key="item.path">
+          <Sidebar v-if="!item.meta.hidden" :item="item" />
+        </template>
+      </el-menu>
+    </div>
   </el-aside>
 </template>
 
 <script lang="ts" setup>
-import "element-plus/theme-chalk/base.css";
 import { Logo, Sidebar } from "@/layout/components";
 import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
 import setting from "@/config/index";
+import { usePermissionStore } from "@/store/usePermission";
 
 const settingStore = useSettingStore();
 const { collapse } = storeToRefs(settingStore);
+const { routes } = usePermissionStore();
 </script>
 
 <style lang="scss" scoped>
 .el-aside {
   height: 100vh;
   box-sizing: border-box;
-  transition: width 0.3s;
-  background: $base-menu-background;
+  transition: all 0.3s;
+}
+
+.el-menu {
+  border-right: 0;
 }
 
 .sidebar {
-  transition: width 0.3s;
+  transition: all 0.3s;
   width: 100%;
-  background: $base-menu-background;
   box-sizing: border-box;
   overflow-x: hidden;
   position: relative;
 }
 
-.fixed-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
 }
 </style>

@@ -1,31 +1,71 @@
 <template>
-  <el-menu
-    :active-text-color="variables['menu-color-active']"
-    :background-color="variables['menu-background']"
-    :collapse="collapse"
-    :collapse-transition="false"
-    :text-color="variables['menu-color']"
-    class="el-menu-vertical-demo"
-    default-active="2"
-    menu-trigger="click"
-  >
-    <template>
-      <span>234</span>
-    </template>
-  </el-menu>
+  <transition appear mode="out-in" name="slide-fade">
+    <component :is="menuComponent" :itemOrMenu="item">
+      <template v-if="item.children && item.children.length">
+        <SideBar
+          v-for="route in item.children"
+          :key="route.path"
+          :item="route"
+        />
+      </template>
+    </component>
+  </transition>
 </template>
 
-<script lang="ts" setup>
-import variables from "../../styles/variables.module.scss";
-import { useSettingStore } from "@/store/useSetting";
-import { storeToRefs } from "pinia";
+<script lang="ts">
+import { computed, defineComponent } from "vue";
+import MenuItem from "./components/menuItem.vue";
+import SubMenuItem from "./components/subMenu.vue";
 
-const settingStore = useSettingStore();
-const { collapse } = storeToRefs(settingStore);
+export default defineComponent({
+  name: "SideBar",
+  components: {
+    MenuItem,
+    SubMenuItem
+  },
+  props: {
+    item: {
+      type: Object,
+      default: () => ({})
+    }
+  },
+  setup(props) {
+    const menuComponent = computed(() => {
+      return !props.item.alwaysShow && props.item.children
+        ? "SubMenuItem"
+        : "MenuItem";
+    });
+    const layout = "horizontal";
+    return {
+      layout,
+      menuComponent
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>
-.el-menu {
-  border: none;
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -1,3 +1,14 @@
+/**
+ * vue-element-admin-next
+ * vea-next
+ * admin-next
+ * vue-admin-next
+ * VEA-next
+ */
+
+/**
+ * @description: 基础系统配置
+ */
 export default {
   // 系统标题
   title: "admin-next",

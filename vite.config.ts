@@ -1,17 +1,19 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue"; // https://vitejs.dev/config/
-import { resolve } from "path";
+import path, { resolve } from "path";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import Unocss from "unocss/vite";
 
 export default defineConfig({
   plugins: [
     vue({ reactivityTransform: true }),
     vueJsx(),
     Components({
-      resolvers: [ElementPlusResolver()]
+      resolvers: [ElementPlusResolver({})]
     }),
     viteMockServe({
       mockPath: "mock",
@@ -20,7 +22,12 @@ export default defineConfig({
 
       setupProdMockServer();
       `
-    })
+    }),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+      symbolId: "icon-[dir]-[name]"
+    }),
+    Unocss()
   ],
 
   server: {
@@ -37,10 +44,9 @@ export default defineConfig({
       scss: {
         javascriptEnabled: true,
         additionalData(content: ClassDecorator, target: string) {
-          console.log();
           if (target.indexOf("layout/styles/variables.module.scss") === -1)
             return (
-              '@import "../src/layout/styles/variables.module.scss";' + content
+              '@use "../src/layout/styles/variables.module.scss";' + content
             );
           return content;
         }
