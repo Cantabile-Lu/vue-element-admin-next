@@ -1,5 +1,8 @@
 <template>
-  <el-aside :width="collapse ? setting.minWidth : setting.maxWidth">
+  <el-aside
+    :width="collapse ? setting.minWidth : setting.maxWidth"
+    class="overscroll-x-none"
+  >
     <Logo v-if="setting.showLogo" />
     <div class="sidebar">
       <el-menu
@@ -31,7 +34,8 @@ const { routes } = usePermissionStore();
 .el-aside {
   height: 100vh;
   box-sizing: border-box;
-  transition: all 0.3s;
+  transition: width 0.3s;
+  overflow: hidden;
 }
 
 .el-menu {

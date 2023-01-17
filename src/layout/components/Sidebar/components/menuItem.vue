@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import SvgIcon from "@/components/SvgIcon/index.vue";
 import { useRouter } from "vue-router";
-import { watch } from "vue";
 
 const props = defineProps({
   itemOrMenu: {
@@ -11,15 +10,6 @@ const props = defineProps({
     }
   }
 });
-watch(
-  () => props.itemOrMenu,
-  (val) => {
-    // console.log("->14:menuItem.vue", val);
-  },
-  {
-    immediate: true
-  }
-);
 const router = useRouter();
 const handleLink = () => {
   const routePath = props.itemOrMenu.path;

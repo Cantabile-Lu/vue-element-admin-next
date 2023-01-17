@@ -2,7 +2,7 @@
   <div class="vea-setting">
     <el-drawer v-model="settingDrawer" title="系统设置">
       <div>
-        <el-button @click="themeHandler">切换主题</el-button>
+        <el-switch v-model="isDark" @change="themeHandler" />
       </div>
     </el-drawer>
   </div>
@@ -13,7 +13,7 @@ import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
 
 const settingStore = useSettingStore();
-const { settingDrawer } = storeToRefs(settingStore);
+const { settingDrawer, isDark } = storeToRefs(settingStore);
 const { themeChange } = settingStore;
 const themeHandler = () => {
   themeChange();

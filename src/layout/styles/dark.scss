@@ -1,12 +1,3 @@
-//// 极夜模式
-//@forward "element-plus/theme-chalk/src/dark/var.scss" with (
-//  $bg-color: (
-//    "page": #989494,
-//    "overlay": #bec6ce,
-//  ),
-//);
-//@use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
-
 $dark-theme: (
   // 字体
   font_color: #00a5e5,
@@ -31,4 +22,13 @@ $default-theme: (
   background_disable_color: #E6EAFF,
   // 边框颜色
   border_color: #7284fb,
-)
+);
+
+//// 极夜模式
+@forward "element-plus/theme-chalk/src/dark/var.scss" with (
+  $bg-color: (
+    "page": #989494,
+    "overlay": #bec6ce,
+  ),
+);
+@use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;

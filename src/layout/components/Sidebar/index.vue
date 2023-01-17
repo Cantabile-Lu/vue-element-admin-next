@@ -1,5 +1,5 @@
 <template>
-  <transition appear mode="out-in" name="slide-fade">
+  <AnimationTransition appear>
     <component :is="menuComponent" :itemOrMenu="item">
       <template v-if="item.children && item.children.length">
         <SideBar
@@ -9,19 +9,21 @@
         />
       </template>
     </component>
-  </transition>
+  </AnimationTransition>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
 import MenuItem from "./components/menuItem.vue";
 import SubMenuItem from "./components/subMenu.vue";
+import AnimationTransition from "@/components/AnimateTransition/index.vue";
 
 export default defineComponent({
   name: "SideBar",
   components: {
     MenuItem,
-    SubMenuItem
+    SubMenuItem,
+    AnimationTransition
   },
   props: {
     item: {
@@ -36,36 +38,15 @@ export default defineComponent({
         : "MenuItem";
     });
     const layout = "horizontal";
+
+    const animation = "animate__animated animate__bounceInRight";
     return {
       layout,
+      animation,
       menuComponent
     };
   }
 });
 </script>
 
-<style lang="scss" scoped>
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
+<style lang="scss" scoped></style>

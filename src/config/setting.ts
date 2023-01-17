@@ -17,5 +17,15 @@ export default {
   // 侧边栏最大宽度
   maxWidth: "210px",
   // 显示Logo
-  showLogo: true
+  showLogo: true,
+  // 侧边栏入口动画
+  /**
+   * @description: 侧边栏动画
+   *  1: animate__fadeIn
+   *  2: animate__fadeInRightBig
+   *  3: animate__lightSpeedInRight
+   *  4: animate__slideInRight
+   *  5: animate__fadeInRight
+   */
+  asideAnimation: "animate__fadeInRight"
 };

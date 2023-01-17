@@ -22,3 +22,5 @@ defineProps({
     <slot></slot>
   </el-sub-menu>
 </template>
+
+<style lang="scss" scoped></style>
