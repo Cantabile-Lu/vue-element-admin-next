@@ -1,13 +1,5 @@
 <script lang="ts" setup>
-import { onMounted } from "vue";
-
 const size = $ref("small");
-
-onMounted(() => {
-  document
-    .getElementsByTagName("body")[0]
-    .setAttribute("data-theme", "default");
-});
 </script>
 
 <template>

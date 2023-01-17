@@ -1,0 +1,10 @@
+// 青草绿
+
+@forward "element-plus/theme-chalk/src/dark/var.scss" with (
+  $bg-color: (
+    'page': #bdc709,
+    '': #138313,
+    'overlay': #1d1e1f,
+  )
+);
+@use "element-plus/theme-chalk/src/index.scss" as *;

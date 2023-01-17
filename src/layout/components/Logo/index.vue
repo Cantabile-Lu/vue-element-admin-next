@@ -55,6 +55,7 @@ const { collapse } = storeToRefs(settingStore);
       line-height: 50px;
       font-size: 14px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+      text-decoration: none;
     }
   }
 

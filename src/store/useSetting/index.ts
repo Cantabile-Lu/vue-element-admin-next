@@ -16,11 +16,10 @@ const settingDrawer = ref(false);
  * @description: 是否是极夜模式
  * @date: 2023/1/17 10:37;
  */
-const darkFlag = ref(false);
 const isDark = useDark({
+  // attribute: "data-theme",
   storageKey: "theme",
   valueDark: "dark",
-  // 高亮class名字
   valueLight: "light"
 });
 
@@ -33,8 +32,14 @@ export const useSettingStore = defineStore("setting", () => {
     settingDrawer.value = !settingDrawer.value;
   }
 
-  function setThemeHandler(theme = "default") {
-    document.getElementsByTagName("body")[0].setAttribute("data-theme", theme);
+  async function setThemeHandler(theme = "light") {
+    // const module = await import(`../../layout/styles/${theme}.scss`);
+    //
+    // Object.keys(module.default).forEach((key) => {
+    //   console.log("🌈🌈🌈-> key", key);
+    // });
+    // document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("class", theme);
   }
 
   /**

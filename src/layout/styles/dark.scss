@@ -1,34 +1,15 @@
-$dark-theme: (
-  // 字体
-  font_color: #00a5e5,
-  // 按钮背景
-  background_color: #00a5e5,
-  // 鼠标划过
-  background_hover_color: #0094CE,
-  // 禁用
-  background_disable_color:#CCEDFA,
-  // 边框颜色
-  border_color: #00a5e5,
-);
+// 极夜模式
 
-$default-theme: (
-  // 字体
-  font_color: #7284fb,
-  // 按钮背景
-  background_color: #7284fb,
-  // 鼠标划过
-  background_hover_color: #6676E1,
-  // 禁用
-  background_disable_color: #E6EAFF,
-  // 边框颜色
-  border_color: #7284fb,
-);
-
-//// 极夜模式
 @forward "element-plus/theme-chalk/src/dark/var.scss" with (
-  $bg-color: (
-    "page": #989494,
-    "overlay": #bec6ce,
+  $colors: (
+    'primary': (
+      'base': #3578bb,
+    ),
   ),
+  $bg-color: (
+    'page': red,
+    '': #1d1e1f,
+    'overlay': #1d1e1f,
+  )
 );
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
