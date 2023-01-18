@@ -9,7 +9,7 @@
         <div
           v-for="item in themes"
           :key="item.id"
-          class="mr-2"
+          class="mr-2 theme-color"
           @click="setTheme(item)"
         >
           {{ item.name }}
@@ -47,6 +47,7 @@ const themes = [
 </script>
 
 <style lang="scss" scoped>
-.vea-setting {
+.theme-color {
+  color: var(text-color);
 }
 </style>

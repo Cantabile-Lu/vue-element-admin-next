@@ -33,13 +33,20 @@ export const useSettingStore = defineStore("setting", () => {
   }
 
   async function setThemeHandler(theme = "light") {
-    // const module = await import(`../../layout/styles/${theme}.scss`);
-    //
+    // const el = document.documentElement;
+    // const module = await import(
+    //   `../../layout/styles/theme/${theme}.module.scss`
+    // );
     // Object.keys(module.default).forEach((key) => {
-    //   console.log("🌈🌈🌈-> key", key);
+    //   if (key.startsWith("van-")) {
+    //     el.setAttribute(
+    //       "style",
+    //       `${key.replace("van-", "el-")}: ${module.default[key]}`
+    //     );
+    //     // useCssVar(key.replace("van-", "el-"), ref(null)).value =
+    //     //   module.default[key];
+    //   }
     // });
-    // document.documentElement.setAttribute("data-theme", theme);
-    document.documentElement.setAttribute("class", theme);
   }
 
   /**

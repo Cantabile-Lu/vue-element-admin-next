@@ -1,60 +1,37 @@
-<template>
-  <div>
-    <el-menu
-      active-text-color="red"
-      background-color="#409EFF"
-      class="el-menu-vertical-demo"
-      default-active="2-1"
-    >
-      <el-menu-item index="1">
-        <el-icon>
-          <CircleCheck />
-        </el-icon>
-        <span>Navigator Two</span>
-      </el-menu-item>
-      <el-sub-menu index="2">
-        <template #title>
-          <el-icon>
-            <CircleCheck />
-          </el-icon>
-          <span>Navigator One</span>
-        </template>
-        <el-menu-item-group title="Group One">
-          <el-menu-item index="2-1">item one</el-menu-item>
-          <el-menu-item index="2-2">item two</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Two">
-          <el-menu-item index="2-3">item three</el-menu-item>
-        </el-menu-item-group>
-        <el-sub-menu index="2-4">
-          <template #title>item four</template>
-          <el-menu-item index="2-4-1">item one</el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="3">
-        <el-icon>
-          <CircleCheck />
-        </el-icon>
-        <span>Navigator Two</span>
-      </el-menu-item>
-      <el-menu-item disabled index="4">
-        <el-icon>
-          <CircleCheck />
-        </el-icon>
-        <span>Navigator Three</span>
-      </el-menu-item>
-      <el-menu-item index="5">
-        <el-icon>
-          <CircleCheck />
-        </el-icon>
-        <span>Navigator Four</span>
-      </el-menu-item>
-    </el-menu>
-  </div>
-</template>
-
 <script lang="ts" setup>
-import { CircleCheck } from "@element-plus/icons-vue";
+import { ref } from "vue";
+import { useCssVar } from "@vueuse/core";
+
+const el = ref(null);
+const color = useCssVar("--color", el);
+const switchColor = () => {
+  if (color.value === "#df8543") color.value = "#7fa998";
+  else color.value = "#df8543";
+};
+const elv = ref(null);
+const key = ref("--color");
+const colorVal = useCssVar(key, elv);
+const changeVar = () => {
+  if (key.value === "--color") key.value = "--color-one";
+  else key.value = "--color";
+};
 </script>
 
-<style scoped></style>
+<template>
+  <div>
+    <div ref="el" style="--color: #7fa998; color: var(--color)">
+      Sample text, {{ color }}
+    </div>
+    <button @click="switchColor">Change Color</button>
+    <div
+      ref="elv"
+      :style="{ color: colorVal }"
+      style="--color: #7fa998; --color-one: #df8543"
+    >
+      Sample text, {{ key }}: {{ colorVal }}
+    </div>
+    <button style="margin-left: 0" @click="changeVar">
+      Change Color Variable
+    </button>
+  </div>
+</template>

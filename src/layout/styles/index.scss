@@ -1,2 +1,18 @@
-@use './light.scss';
-@use "./dark.scss";
+//@use 'theme/light.module';
+//@use "theme/dark.module";
+
+// 极夜模式
+
+//@forward "@/node_modules/element-plus/theme-chalk/src/dark/var" with (
+//  $colors: (
+//    'primary': (
+//      'base': #2775b6,
+//    ),
+//  ),
+//  $bg-color: (
+//    'page': red,
+//    '': #484242,
+//    'overlay': #1d1e1f,
+//  )
+//);
+//@use "@/node_modules/element-plus/theme-chalk/src/dark/css-vars" as *;
