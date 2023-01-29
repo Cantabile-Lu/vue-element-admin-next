@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { useDark, useToggle } from "@vueuse/core";
+import { useCssVar, useDark, useToggle } from "@vueuse/core";
 
 /**
  * @description: 菜单展开变量
@@ -17,7 +17,6 @@ const settingDrawer = ref(false);
  * @date: 2023/1/17 10:37;
  */
 const isDark = useDark({
-  // attribute: "data-theme",
   storageKey: "theme",
   valueDark: "dark",
   valueLight: "light"
@@ -32,21 +31,17 @@ export const useSettingStore = defineStore("setting", () => {
     settingDrawer.value = !settingDrawer.value;
   }
 
-  async function setThemeHandler(theme = "light") {
-    // const el = document.documentElement;
-    // const module = await import(
-    //   `../../layout/styles/theme/${theme}.module.scss`
-    // );
-    // Object.keys(module.default).forEach((key) => {
-    //   if (key.startsWith("van-")) {
-    //     el.setAttribute(
-    //       "style",
-    //       `${key.replace("van-", "el-")}: ${module.default[key]}`
-    //     );
-    //     // useCssVar(key.replace("van-", "el-"), ref(null)).value =
-    //     //   module.default[key];
-    //   }
-    // });
+  async function setThemeHandler(theme: string) {
+    if (!theme) return;
+    const module = await import(
+      `../../layout/styles/theme/${theme}.module.scss`
+    );
+    Object.keys(module.default).forEach((key) => {
+      if (key.startsWith("van-")) {
+        useCssVar(key.replace("van-", "--el-"), ref(null)).value =
+          module.default[key];
+      }
+    });
   }
 
   /**
@@ -55,6 +50,9 @@ export const useSettingStore = defineStore("setting", () => {
    */
   function themeChange() {
     useToggle(isDark);
+    if (isDark.value) {
+      setThemeHandler("default");
+    }
   }
 
   return {

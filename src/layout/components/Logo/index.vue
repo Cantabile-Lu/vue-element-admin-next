@@ -34,9 +34,9 @@ const { collapse } = storeToRefs(settingStore);
 .sidebar-logo-container {
   width: 100%;
   height: 60px;
-  background: #2b2f3a;
   display: flex;
   align-items: center;
+  background-color: var(--el-menu-bg-color);
 
   & .sidebar-logo-link {
     margin-left: 20px;
@@ -50,7 +50,7 @@ const { collapse } = storeToRefs(settingStore);
     }
 
     & .sidebar-title {
-      color: #fff;
+      //color: #fff;
       font-weight: 600;
       line-height: 50px;
       font-size: 14px;

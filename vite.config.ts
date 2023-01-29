@@ -42,14 +42,17 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        javascriptEnabled: true
-        // additionalData(content: ClassDecorator, target: string) {
-        //   if (target.indexOf("layout/styles/variables.module.scss") === -1)
-        //     return (
-        //       '@use "@/src/layout/styles/variables.module.scss" as *;' + content
-        //     );
-        //   return content;
-        // }
+        javascriptEnabled: true,
+        additionalData(content: ClassDecorator, target: string) {
+          if (
+            target.indexOf("layout/styles/theme/variables.module.scss") === -1
+          )
+            return (
+              '@use "@/layout/styles/theme/variables.module.scss" as *;' +
+              content
+            );
+          return content;
+        }
       }
     }
   }

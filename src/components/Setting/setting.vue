@@ -15,6 +15,15 @@
           {{ item.name }}
         </div>
       </div>
+
+      <el-row :gutter="20" class="mt-10px">
+        <el-button>Default</el-button>
+        <el-button type="primary">Primary</el-button>
+        <el-button type="success">Success</el-button>
+        <el-button type="info">Info</el-button>
+        <el-button type="warning">Warning</el-button>
+        <el-button type="danger">Danger</el-button>
+      </el-row>
     </el-drawer>
   </div>
 </template>
@@ -41,7 +50,7 @@ const setTheme = (item: ITheme) => {
 };
 const themes = [
   { id: 2, theme: "light", name: "月光白" },
-  { id: 3, theme: "dark", name: "极夜黑" },
+  { id: 3, theme: "black", name: "极夜黑" },
   { id: 4, theme: "green", name: "春色绿" }
 ];
 </script>

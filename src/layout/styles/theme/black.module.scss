@@ -1,5 +1,6 @@
-$base-color-primary: green;
-$base-menu-bg-color: green;
+$base-color-primary: #363433;
+$base-menu-bg-color: #000;
+
 :export {
   van-color-primary: $base-color-primary;
   van-menu-bg-color: $base-menu-bg-color;

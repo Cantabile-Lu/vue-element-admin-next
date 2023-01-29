@@ -1,12 +1,8 @@
-//@use 'theme/light.module';
-//@use "theme/dark.module";
-
-// 极夜模式
-
-//@forward "@/node_modules/element-plus/theme-chalk/src/dark/var" with (
+//
+//@forward "element-plus/theme-chalk/src/dark/var" with (
 //  $colors: (
 //    'primary': (
-//      'base': #2775b6,
+//      'base': #6d94b6,
 //    ),
 //  ),
 //  $bg-color: (
@@ -15,4 +11,4 @@
 //    'overlay': #1d1e1f,
 //  )
 //);
-//@use "@/node_modules/element-plus/theme-chalk/src/dark/css-vars" as *;
+//@use "element-plus/theme-chalk/src/dark/css-vars" as *;

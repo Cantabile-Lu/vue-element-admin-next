@@ -17,6 +17,7 @@ const active = ref("defaultTheme");
 
 const settingStore = useSettingStore();
 const { collapse } = storeToRefs(settingStore);
+settingStore.setThemeHandler();
 </script>
 
 <style lang="scss" scoped></style>

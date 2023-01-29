@@ -10,7 +10,7 @@
         :collapse-transition="false"
         :default-active="$route.path"
       >
-        <template v-for="(item, index) in routes" :key="item.path">
+        <template v-for="item in routes" :key="item.path">
           <Sidebar v-if="!item.meta.hidden" :item="item" />
         </template>
       </el-menu>
@@ -24,6 +24,7 @@ import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
 import setting from "@/config/index";
 import { usePermissionStore } from "@/store/usePermission";
+// import variables from "../../styles/theme/variables.module.scss";
 
 const settingStore = useSettingStore();
 const { collapse } = storeToRefs(settingStore);
@@ -36,6 +37,7 @@ const { routes } = usePermissionStore();
   box-sizing: border-box;
   transition: width 0.3s;
   overflow: hidden;
+  background-color: var(--el-menu-bg-color);
 }
 
 .el-menu {

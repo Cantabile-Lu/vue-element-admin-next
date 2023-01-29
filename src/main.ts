@@ -5,6 +5,7 @@ import { initStore } from "@/store";
 import { initRouter } from "@/router";
 
 import "@/layout/styles/index.scss";
+import "@/layout/styles/dark.scss";
 import "normalize.css";
 import "animate.css";
 import "uno.css";

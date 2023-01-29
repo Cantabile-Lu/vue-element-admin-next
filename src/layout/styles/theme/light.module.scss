@@ -1,6 +1,9 @@
-$--el-color-primary: green;
-$el-text-color: #fff;
+$base-color-primary: #10aec2;
+
+// 菜单背景颜色
+$base-menu-bg-color: #fff;
 
 :export {
-  van-text-color: $el-text-color;
+  van-color-primary: $base-color-primary;
+  van-menu-bg-color: $base-menu-bg-color;
 }

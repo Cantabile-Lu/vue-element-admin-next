@@ -27,5 +27,5 @@ export default {
    *  4: animate__slideInRight
    *  5: animate__fadeInRight
    */
-  asideAnimation: "animate__fadeInRight"
+  asideAnimation: "animate__fadeIn"
 };
