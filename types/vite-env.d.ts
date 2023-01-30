@@ -8,6 +8,4 @@ declare module "*.vue" {
 
 declare const $ref = any;
 
-declare module "@zougt/vite-plugin-theme-preprocessor" {
-  export function themePreprocessorPlugin(obj: any): void;
-}
+// test

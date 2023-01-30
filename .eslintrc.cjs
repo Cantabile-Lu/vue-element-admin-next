@@ -22,6 +22,9 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   rules: {
+    '@typescript-eslint/consistent-type-exports': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+
     'vue/script-setup-uses-vars': 'error',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

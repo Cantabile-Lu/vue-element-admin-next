@@ -1,15 +1,17 @@
-import axios from "axios";
 import type { AxiosInstance } from "axios";
+import axios from "axios";
 import { IRequestInterceptors, IVNRequestConfig } from "./type";
 import { ElLoading } from "element-plus";
 import type { LoadingInstance } from "element-plus/lib/components/loading/src/loading";
 
 const DEFAULT_LOADING = false;
+
 class Service {
   instance: AxiosInstance;
   showLoading: boolean;
   loading?: LoadingInstance;
   interceptors?: IRequestInterceptors;
+
   constructor(config: IVNRequestConfig) {
     this.instance = axios.create(config);
     this.interceptors = config.interceptors;
@@ -17,12 +19,12 @@ class Service {
     // 实列拦截器
     this.instance.interceptors.request.use(
       this.interceptors?.requestInterceptor,
-      this.interceptors?.requestInterceptorCatch,
+      this.interceptors?.requestInterceptorCatch
     );
 
     this.instance.interceptors.response.use(
       this.interceptors?.responseInterceptor,
-      this.interceptors?.responseInterceptorCatch,
+      this.interceptors?.responseInterceptorCatch
     );
 
     //  全局拦截器
@@ -33,7 +35,7 @@ class Service {
             lock: true,
             fullscreen: true,
             background: "rgba(195,195,195, 0.2)",
-            text: "正在加载中",
+            text: "正在加载中"
           });
         }
         return config;
@@ -41,7 +43,7 @@ class Service {
       (err) => {
         this.loading?.close();
         return err;
-      },
+      }
     );
 
     this.instance.interceptors.response.use(
@@ -54,7 +56,7 @@ class Service {
       (err) => {
         this.loading?.close();
         return err;
-      },
+      }
     );
   }
 
@@ -89,15 +91,19 @@ class Service {
   get<T>(config: IVNRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "GET" });
   }
+
   post<T>(config: IVNRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "POST" });
   }
+
   delete<T>(config: IVNRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "DELETE" });
   }
+
   put<T>(config: IVNRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "PUT" });
   }
+
   patch<T>(config: IVNRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "PATCH" });
   }

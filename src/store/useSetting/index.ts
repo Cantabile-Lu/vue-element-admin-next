@@ -51,7 +51,7 @@ export const useSettingStore = defineStore("setting", () => {
   function themeChange() {
     useToggle(isDark);
     if (isDark.value) {
-      setThemeHandler("default");
+      setThemeHandler("default").then(() => {});
     }
   }
 

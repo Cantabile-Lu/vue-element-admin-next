@@ -1,10 +1,17 @@
 {
+
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "module": "ESNext",
     "useDefineForClassFields": true,
     "moduleResolution": "node",
@@ -14,9 +21,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "types": ["vite/client"],
+    "allowUnreachableCode": false,
+    "noImplicitOverride": true,
+    "strictNullChecks": true,
+    "types": [
+      "vite/client",
+      "element-plus/global"
+    ],
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+  ]
 }

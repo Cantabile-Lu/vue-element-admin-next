@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import type { App } from "vue";
 import { setupPermissions } from "./permissions";
 import Layout from "@/layout/index.vue";
-import { RouteRecord } from "@/types/route";
+import { RouteRecord } from "../../types/route";
 
 /**
  * path: 路径
