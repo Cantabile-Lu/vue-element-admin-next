@@ -1,9 +1,9 @@
 <template>
   <div class="vea-setting">
     <el-drawer v-model="settingDrawer" title="系统设置">
-      <div>
-        <el-switch v-model="isDark" @change="themeHandler" />
-      </div>
+      <!--      <div>-->
+      <!--        <el-switch v-model="isDark" @change="themeHandler" />-->
+      <!--      </div>-->
 
       <div class="flex">
         <div
@@ -15,19 +15,9 @@
           {{ item.name }}
         </div>
       </div>
-
-      <el-row :gutter="20" class="mt-10px">
-        <el-button>Default</el-button>
-        <el-button type="primary">Primary</el-button>
-        <el-button type="success">Success</el-button>
-        <el-button type="info">Info</el-button>
-        <el-button type="warning">Warning</el-button>
-        <el-button type="danger">Danger</el-button>
-      </el-row>
     </el-drawer>
   </div>
 </template>
-
 <script lang="ts" setup>
 import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";

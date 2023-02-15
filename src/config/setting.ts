@@ -15,7 +15,7 @@ export default {
   // 侧边栏最小宽度
   minWidth: "60px",
   // 侧边栏最大宽度
-  maxWidth: "210px",
+  maxWidth: "260px",
   // 显示Logo
   showLogo: true,
   // 侧边栏入口动画

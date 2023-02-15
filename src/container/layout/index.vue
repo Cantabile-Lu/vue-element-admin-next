@@ -5,19 +5,21 @@
 </template>
 
 <script lang="ts" setup>
+import VeaHorizontal from "./VeaHorizontal/index.vue";
+import VeaRoutine from "./VeaRoutine/index.vue";
 import { ref } from "vue";
-import defaultTheme from "./theme/default/index.vue";
 import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
 
 const theme = {
-  defaultTheme
+  VeaHorizontal,
+  VeaRoutine
 };
-const active = ref("defaultTheme");
+const active = ref("VeaRoutine");
 
 const settingStore = useSettingStore();
 const { collapse } = storeToRefs(settingStore);
-settingStore.setThemeHandler();
+settingStore.setThemeHandler("light");
 </script>
 
 <style lang="scss" scoped></style>

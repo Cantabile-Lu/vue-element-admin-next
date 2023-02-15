@@ -1,7 +1,10 @@
 $base-color-primary: #363433;
 $base-menu-bg-color: #000;
-
+$base-menu-active-color: #fff;
 :export {
   van-color-primary: $base-color-primary;
+  
   van-menu-bg-color: $base-menu-bg-color;
+  van-menu-active-color: $base-menu-active-color;
+
 }

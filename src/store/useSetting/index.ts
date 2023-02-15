@@ -31,7 +31,7 @@ export const useSettingStore = defineStore("setting", () => {
     settingDrawer.value = !settingDrawer.value;
   }
 
-  async function setThemeHandler(theme: string) {
+  async function setThemeHandler(theme?: string) {
     if (!theme) return;
     const module = await import(
       `../../layout/styles/theme/${theme}.module.scss`
@@ -42,6 +42,8 @@ export const useSettingStore = defineStore("setting", () => {
           module.default[key];
       }
     });
+
+    document.body.setAttribute("class", `van-theme-${theme}`);
   }
 
   /**

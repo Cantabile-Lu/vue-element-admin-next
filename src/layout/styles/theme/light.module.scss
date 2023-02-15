@@ -1,9 +1,42 @@
-$base-color-primary: #10aec2;
+// 默认色
 
-// 菜单背景颜色
-$base-menu-bg-color: #fff;
+$base-color-primary: #1677b3;
+$base-color-success: #13ce66;
+$base-color-warning: #ffba00;
+$base-color-danger: #ff4d4f;
+$base-color-error: #ff4d4f;
 
 :export {
+  van-color-grey: $base-color-grey;
+  van-color-black: $base-color-black;
   van-color-primary: $base-color-primary;
-  van-menu-bg-color: $base-menu-bg-color;
+  van-color-primary-light-1: mix($base-color-white, $base-color-primary, 10%);
+  van-color-primary-light-2: mix($base-color-white, $base-color-primary, 20%);
+  van-color-primary-light-3: mix($base-color-white, $base-color-primary, 30%);
+  van-color-primary-light-4: mix($base-color-white, $base-color-primary, 40%);
+  van-color-primary-light-5: mix($base-color-white, $base-color-primary, 50%);
+  van-color-primary-light-6: mix($base-color-white, $base-color-primary, 60%);
+  van-color-primary-light-7: mix($base-color-white, $base-color-primary, 70%);
+  van-color-primary-light-8: mix($base-color-white, $base-color-primary, 80%);
+  van-color-primary-light-9: mix($base-color-white, $base-color-primary, 90%);
+  van-color-success: $base-color-success;
+  van-color-primary-dark-2: $base-color-primary;
+  van-color-success-light: mix($base-color-white, $base-color-success, 80%);
+  van-color-success-lighter: mix($base-color-white, $base-color-success, 90%);
+  van-color-warning: $base-color-warning;
+  van-color-warning-light: mix($base-color-white, $base-color-warning, 80%);
+  van-color-warning-lighter: mix($base-color-white, $base-color-warning, 90%);
+  van-color-danger: $base-color-danger;
+  van-color-danger-light: mix($base-color-white, $base-color-danger, 80%);
+  van-color-danger-lighter: mix($base-color-white, $base-color-danger, 90%);
+  van-color-error: $base-color-error;
+  van-color-error-light: mix($base-color-white, $base-color-error, 80%);
+  van-color-error-lighter: mix($base-color-white, $base-color-error, 90%);
+  van-color-info: $base-color-text-secondary;
+  van-color-info-light: mix($base-color-white, $base-color-text-secondary, 80%);
+  van-color-info-lighter: mix(
+      $base-color-white,
+      $base-color-text-secondary,
+      90%
+  );
 }

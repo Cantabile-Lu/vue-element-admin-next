@@ -1,15 +1,7 @@
 <script lang="ts" setup>
-const size = $ref("small");
+import { ref } from "vue";
 
-function fn(n: number) {
-  if (n > 5) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-fn(12);
+const size = ref("small");
 </script>
 
 <template>

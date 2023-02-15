@@ -5,7 +5,7 @@ import { Expand, Fold } from "@element-plus/icons-vue";
 import { ElIcon } from "element-plus";
 
 export default defineComponent({
-  name: "Expand",
+  name: "VeaExpand",
   setup() {
     const settingStore = useSettingStore();
     const { collapse } = storeToRefs(settingStore);

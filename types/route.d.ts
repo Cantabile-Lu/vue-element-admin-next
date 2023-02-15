@@ -7,7 +7,7 @@ import { RouteRecordNormalized } from "vue-router";
 declare interface RouteRecord
   extends Omit<RouteRecordRaw, "name" | "meta" | "children"> {
   name: string;
-  meta: VabRouteMeta;
+  meta: vanRouteMeta;
   children?: RouteRecord[];
   childrenPathList?: string[];
   parentIcon?: string;
@@ -16,21 +16,21 @@ declare interface RouteRecord
   alwaysShow?: Boolean;
 }
 
-declare interface VabRouteRecordRaw
+declare interface vanRouteRecordRaw
   extends Omit<RouteRecordNormalized, "meta"> {
-  meta: VabRouteMeta;
+  meta: vanRouteMeta;
 }
 
 /**
  * useRoute()
  */
-declare interface VabRoute extends Omit<_RouteLocationBase, "meta"> {
-  meta: VabRouteMeta;
-  matched: VabRouteRecordRaw[];
+declare interface vanRoute extends Omit<_RouteLocationBase, "meta"> {
+  meta: vanRouteMeta;
+  matched: vanRouteRecordRaw[];
   parentIcon?: string;
 }
 
-declare interface VabRouteMeta {
+declare interface vanRouteMeta {
   // 高亮指定菜单
   activeMenu?: string;
   // badge小标签(只支持子级)

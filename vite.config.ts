@@ -13,7 +13,9 @@ export default defineConfig({
     vue({ reactivityTransform: true }),
     vueJsx(),
     Components({
-      resolvers: [ElementPlusResolver({})]
+      resolvers: [ElementPlusResolver({})],
+      dirs: ["src/container/components"],
+      dts: "types/components.d.ts"
     }),
     viteMockServe({
       mockPath: "mock",
@@ -35,7 +37,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src")
+      "@": resolve(__dirname, "src"),
+      "~": resolve(__dirname, "."),
+      "#": resolve(__dirname, "container")
     }
   },
 

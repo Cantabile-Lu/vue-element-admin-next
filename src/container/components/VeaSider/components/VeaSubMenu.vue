@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SvgIcon from "@/components/SvgIcon/index.vue";
+// import VeaIcon from "@/container/components/VeaIcon/VeaIcon.vue";
 
 defineProps({
   itemOrMenu: {
@@ -14,7 +14,7 @@ defineProps({
 <template>
   <el-sub-menu :index="itemOrMenu.path">
     <template #title>
-      <SvgIcon v-if="itemOrMenu.meta?.icon" :name="itemOrMenu.meta.icon" />
+      <VeaIcon v-if="itemOrMenu.meta?.icon" :name="itemOrMenu.meta.icon" />
       <span>
         {{ itemOrMenu.meta?.title }}
       </span>

@@ -1,28 +1,20 @@
 <template>
-  <el-aside
-    :width="collapse ? setting.minWidth : setting.maxWidth"
-    class="overscroll-x-none"
-  >
-    <Logo v-if="setting.showLogo" />
-    <div class="sidebar">
-      <el-menu
-        :collapse="collapse"
-        :collapse-transition="false"
-        :default-active="$route.path"
-      >
-        <template v-for="item in routes" :key="item.path">
-          <Sidebar v-if="!item.meta.hidden" :item="item" />
-        </template>
-      </el-menu>
-    </div>
-  </el-aside>
+  <div class="sidebar">
+    <el-menu
+      :collapse="collapse"
+      :collapse-transition="false"
+      :default-active="$route.path"
+    >
+      <template v-for="item in routes" :key="item.path">
+        <VeaSider v-if="!item.meta.hidden" :item="item" />
+      </template>
+    </el-menu>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { Logo, Sidebar } from "@/layout/components";
 import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
-import setting from "@/config/index";
 import { usePermissionStore } from "@/store/usePermission";
 // import variables from "../../styles/theme/variables.module.scss";
 

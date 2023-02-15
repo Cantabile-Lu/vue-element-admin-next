@@ -8,4 +8,6 @@ declare module "*.vue" {
 
 declare const $ref = any;
 
+declare module "@originjs/vite-plugin-require-context" {}
+
 // test

@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" name="VeaLogo" setup>
 import AnimationTransition from "@/components/AnimateTransition/index.vue";
 import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
@@ -32,6 +32,7 @@ const { collapse } = storeToRefs(settingStore);
 
 <style lang="scss" scoped>
 .sidebar-logo-container {
+  border: 1px solid blue;
   width: 100%;
   height: 60px;
   display: flex;
@@ -43,6 +44,7 @@ const { collapse } = storeToRefs(settingStore);
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 
     & .sidebar-logo {
       width: 32px;
@@ -50,12 +52,12 @@ const { collapse } = storeToRefs(settingStore);
     }
 
     & .sidebar-title {
-      //color: #fff;
+      color: var(--el-color-grey);
       font-weight: 600;
       line-height: 50px;
       font-size: 14px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-      text-decoration: none;
+      text-decoration: none !important;
     }
   }
 

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import SvgIcon from "@/components/SvgIcon/index.vue";
 import { useRouter } from "vue-router";
+// import VeaIcon from "@/container/components/VeaIcon/VeaIcon.vue";
 
 const props = defineProps({
   itemOrMenu: {
@@ -19,7 +19,8 @@ const handleLink = () => {
 
 <template>
   <el-menu-item :index="itemOrMenu.path" @click="handleLink">
-    <SvgIcon v-if="itemOrMenu.meta?.icon" :name="itemOrMenu.meta.icon" />
+    <VeaIcon v-if="itemOrMenu.meta?.icon" :name="itemOrMenu.meta.icon" />
+    1
     <span>
       {{ itemOrMenu.meta?.title }}
     </span>

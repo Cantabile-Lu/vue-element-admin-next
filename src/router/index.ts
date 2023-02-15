@@ -2,7 +2,8 @@ import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHashHistory } from "vue-router";
 import type { App } from "vue";
 import { setupPermissions } from "./permissions";
-import Layout from "@/layout/index.vue";
+// import Layout from "@/layout/VeaIcon.vue";
+import Layout from "@/container/layout/index.vue";
 import { RouteRecord } from "../../types/route";
 
 /**
@@ -49,7 +50,7 @@ export const constantRoutes: RouteRecord[] = [
     component: Layout,
     meta: {
       title: "路由器",
-      icon: "area"
+      icon: "dashboard"
     },
     children: [
       {
@@ -83,7 +84,7 @@ export const asyncRoutes: RouteRecordRaw[] = [
   //   children: [
   //     {
   //       path: "/details",
-  //       component: () => import("@/views/details/index.vue")
+  //       component: () => import("@/views/details/VeaIcon.vue")
   //     }
   //   ]
   // }
