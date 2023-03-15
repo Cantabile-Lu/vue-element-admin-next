@@ -8,6 +8,11 @@ import { useDark, useToggle } from "@vueuse/core";
  */
 const collapse = ref(false);
 /**
+ * @description: 是否固定header
+ * @date: 2023/3/15 22:09;
+ */
+const isFixedHeader = ref(true);
+/**
  * @description: 左侧配置展开变量
  * @date: 2023/1/10 11:16;
  */
@@ -23,8 +28,13 @@ const isDark = useDark({
 });
 
 export const useSettingStore = defineStore("setting", () => {
+  // todo 数据可存储本地, 进行缓存
   function collapseChange() {
     collapse.value = !collapse.value;
+  }
+
+  function setFixedHeader() {
+    isFixedHeader.value = !isFixedHeader.value;
   }
 
   function settingDrawerChange() {
@@ -64,6 +74,8 @@ export const useSettingStore = defineStore("setting", () => {
     settingDrawerChange,
     themeChange,
     isDark,
-    setThemeHandler
+    setThemeHandler,
+    isFixedHeader,
+    setFixedHeader
   };
 });

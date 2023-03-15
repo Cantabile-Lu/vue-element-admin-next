@@ -1,11 +1,13 @@
 <template>
-  <div class="vea-horizontal-layout">
+  <div class="vea-horizontal-layout" style="padding-top: 60px">
     <div class="vea-right-main">
       <vea-side />
     </div>
     <div :class="{ 'is-collapse': collapse }" class="vea-right-main">
-      <vea-header />
-      <vea-main />
+      <div :class="{ 'is-fixed-header': isFixedHeader }">
+        <vea-header />
+      </div>
+      <!--      <vea-main />-->
     </div>
   </div>
 </template>
@@ -13,6 +15,9 @@
 <script lang="ts" setup>
 import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
+import { ref } from "vue";
+
+const isFixedHeader = ref(true);
 
 const settingStore = useSettingStore();
 const { collapse } = storeToRefs(settingStore);

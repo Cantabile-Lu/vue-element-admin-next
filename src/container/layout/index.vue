@@ -24,11 +24,31 @@ settingStore.setThemeHandler("light");
 
 <style lang="scss" scoped>
 @import "@/container/styles/variable.scss";
+.common-layout {
+  width: 100%;
+  height: 100%;
+  [class*="vea-horizontal-layout"] {
+    .fixed {
+      border: 3px solid blue;
+      margin-top: $vea-header-height;
+    }
+  }
+}
 ::v-deep().vea-right-main {
-  border: 1px solid red;
+  //border: 1px solid red;
   margin-left: $vea-side-width;
+  .is-fixed-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    //border: 3px solid red;
+  }
   &.is-collapse {
     margin-left: $vea-side-min-width;
+    .is-fixed-header {
+      width: $vea-right-main;
+      //border: 3px solid blue;
+    }
   }
 }
 </style>

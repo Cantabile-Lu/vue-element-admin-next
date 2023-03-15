@@ -29,12 +29,14 @@ html {
     #app {
       height: 100vh;
       overflow: auto;
+      //overflow: hidden;
       //border: 3px solid blue;
 
       .vea-main {
         width: 100%;
-        border: 1px solid red;
+        border: 3px solid red;
         background: #fff; // todo 全局变量
+        overflow: auto;
 
       }
     }

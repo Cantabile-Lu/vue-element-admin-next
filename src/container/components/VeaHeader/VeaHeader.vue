@@ -23,9 +23,8 @@ const settingHandler = () => {
 
 .vea-header {
   height: $vea-header-height;
-  position: relative;
-  //width: calc(100% - #{$vea-side-width});
-  border: 3px solid green;
+  border: 1px solid red;
+  width: 100%;
   //margin-left: $vea-side-width;
   //display: flex;
   //align-items: center;

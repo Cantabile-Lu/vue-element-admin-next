@@ -9,7 +9,5 @@
 
 <style lang="scss" scoped>
 .vea-main {
-  border: 1px solid blue;
-  width: calc(100% - 240px);
 }
 </style>
