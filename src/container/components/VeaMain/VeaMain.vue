@@ -1,31 +1,15 @@
 <template>
-  <el-main>
-    <router-view v-slot="{ Component, route }">
-      <transition enter-active-class="animate__animated animate__bounceInDown">
-        <component :is="Component" :key="route.path" ref="componentRef" />
-      </transition>
-    </router-view>
-  </el-main>
+  <div class="vea-main">
+    <VeaRouterView />
+    <div>footer</div>
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { ref } from "vue";
-
-const value = ref();
-</script>
+<script></script>
 
 <style lang="scss" scoped>
-.el-main {
+.vea-main {
   border: 1px solid blue;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+  width: calc(100% - 240px);
 }
 </style>

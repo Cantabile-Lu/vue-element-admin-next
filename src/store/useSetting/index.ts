@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { useCssVar, useDark, useToggle } from "@vueuse/core";
+import { useDark, useToggle } from "@vueuse/core";
 
 /**
  * @description: 菜单展开变量
@@ -32,18 +32,18 @@ export const useSettingStore = defineStore("setting", () => {
   }
 
   async function setThemeHandler(theme?: string) {
-    if (!theme) return;
-    const module = await import(
-      `../../layout/styles/theme/${theme}.module.scss`
-    );
-    Object.keys(module.default).forEach((key) => {
-      if (key.startsWith("van-")) {
-        useCssVar(key.replace("van-", "--el-"), ref(null)).value =
-          module.default[key];
-      }
-    });
-
-    document.body.setAttribute("class", `van-theme-${theme}`);
+    // if (!theme) return;
+    // const module = await import(
+    //   `../../layout/styles/theme/${theme}.module.scss`
+    // );
+    // Object.keys(module.default).forEach((key) => {
+    //   if (key.startsWith("van-")) {
+    //     useCssVar(key.replace("van-", "--el-"), ref(null)).value =
+    //       module.default[key];
+    //   }
+    // });
+    //
+    // document.body.setAttribute("class", `van-theme-${theme}`);
   }
 
   /**

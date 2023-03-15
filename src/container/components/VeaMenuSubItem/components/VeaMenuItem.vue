@@ -20,7 +20,6 @@ const handleLink = () => {
 <template>
   <el-menu-item :index="itemOrMenu.path" @click="handleLink">
     <VeaIcon v-if="itemOrMenu.meta?.icon" :name="itemOrMenu.meta.icon" />
-    1
     <span>
       {{ itemOrMenu.meta?.title }}
     </span>

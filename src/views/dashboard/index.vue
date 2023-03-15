@@ -1,18 +1,11 @@
 <template>
   <div>
-    <el-row :gutter="20" class="mt-10px">
-      <el-button>Default</el-button>
-      <el-button type="primary">Primary</el-button>
-      <el-button type="success">Success</el-button>
-      <el-button type="info">Info</el-button>
-      <el-button type="warning">Warning</el-button>
-      <el-button type="danger">Danger</el-button>
-    </el-row>
-
-    <el-image
-      alt="千图网alt"
-      src="https://preview.qiantucdn.com/58pic/40/85/17/16u58PIC4HJjyXtaywpSQ_PIC2018.png!w1024_new_0_1"
-    />
+    <el-button>Default</el-button>
+    <el-button type="success">Success</el-button>
+    <el-button type="info">Info</el-button>
+    <el-button type="warning">Warning</el-button>
+    <el-button type="danger">Danger</el-button>
+    <div v-for="item in 100">{{ item }}</div>
   </div>
 </template>
 

@@ -15,11 +15,20 @@ const theme = {
   VeaHorizontal,
   VeaRoutine
 };
-const active = ref("VeaRoutine");
+const active = ref("VeaHorizontal");
 
 const settingStore = useSettingStore();
 const { collapse } = storeToRefs(settingStore);
 settingStore.setThemeHandler("light");
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "@/container/styles/variable.scss";
+::v-deep().vea-right-main {
+  border: 1px solid red;
+  margin-left: $vea-side-width;
+  &.is-collapse {
+    margin-left: $vea-side-min-width;
+  }
+}
+</style>

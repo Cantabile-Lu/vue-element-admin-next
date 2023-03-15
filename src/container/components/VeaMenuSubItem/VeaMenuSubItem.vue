@@ -2,7 +2,7 @@
   <AnimationTransition appear>
     <component :is="menuComponent" :itemOrMenu="item">
       <template v-if="item.children && item.children.length">
-        <VeaSider
+        <VeaMenuSubItem
           v-for="route in item.children"
           :key="route.path"
           :item="route"
@@ -11,7 +11,6 @@
     </component>
   </AnimationTransition>
 </template>
-
 <script lang="ts">
 import { computed, defineComponent } from "vue";
 import VeaMenuItem from "./components/VeaMenuItem.vue";

@@ -1,13 +1,43 @@
 <template>
-  <div>横向布局</div>
+  <div class="vea-horizontal-layout">
+    <div class="vea-right-main">
+      <vea-side />
+    </div>
+    <div :class="{ 'is-collapse': collapse }" class="vea-right-main">
+      <vea-header />
+      <vea-main />
+    </div>
+  </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  }
-};
+<script lang="ts" setup>
+import { useSettingStore } from "@/store/useSetting";
+import { storeToRefs } from "pinia";
+
+const settingStore = useSettingStore();
+const { collapse } = storeToRefs(settingStore);
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+//$--side-width: 240px;
+//$--side-margin: 10px;
+//$--header-height: 60px;
+//.vea-side {
+//  border: 1px solid yellow;
+//  position: fixed;
+//  left: 0;
+//  top: 0;
+//  width: $--side-width;
+//  height: 100vh;
+//  box-sizing: border-box;
+//  margin-right: $--side-margin;
+//}
+//
+//.vea-main {
+//  margin-left: calc($--side-width + $--side-margin);
+//  margin-top: $--header-height;
+//  border: 1px solid blue;
+//  height: calc(100vh - $--header-height);
+//  box-sizing: border-box;
+//}
+</style>

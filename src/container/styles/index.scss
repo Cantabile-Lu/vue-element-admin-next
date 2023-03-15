@@ -13,7 +13,6 @@
   }
 }
 
-
 html {
   body,
   body[class*='van-theme-'] {
@@ -22,12 +21,27 @@ html {
     height: 100vh;
     padding: 0;
     overflow: hidden;
+    font-family: 'PingFang SC', Arial, 'Microsoft YaHei', sans-serif;
     color: var(--el-color-black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     #app {
       height: 100vh;
       overflow: auto;
-      @include base-scrollbar;
+      //border: 3px solid blue;
+
+      .vea-main {
+        width: 100%;
+        border: 1px solid red;
+        background: #fff; // todo 全局变量
+
+      }
     }
   }
+}
+
+// 全部元素
+* {
+  box-sizing: border-box;
 }

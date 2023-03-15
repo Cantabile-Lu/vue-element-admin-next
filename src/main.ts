@@ -3,11 +3,8 @@ import App from "./App.vue";
 
 import { initPinia } from "@/store";
 import { initRouter } from "@/router";
+import "@/container/index";
 /*所有初始化样式*/
-import "normalize.css";
-// import "@/layout/styles/index.scss";
-// import "@/layout/styles/background/light.scss";
-// import "@/layout/styles/dark.scss";
 import "uno.css";
 
 function initApp() {

@@ -2,17 +2,19 @@
   <div :class="{ collapse: collapse }" class="sidebar-logo-container">
     <AnimationTransition>
       <router-link v-if="collapse" class="sidebar-logo-link" to="/">
-        <img
+        <el-image
           alt="logo"
           class="sidebar-logo"
-          src="../../../../public/vite.svg"
+          fit="cover"
+          src="../../../../public/logo.png"
         />
       </router-link>
       <router-link v-else class="sidebar-logo-link" to="/">
-        <img
+        <el-image
           alt="logo"
           class="sidebar-logo"
-          src="../../../../public/vite.svg"
+          fit="cover"
+          src="../../../../public/logo.png"
         />
         <h1 class="sidebar-title">{{ setting.title }}</h1>
       </router-link>
@@ -32,7 +34,6 @@ const { collapse } = storeToRefs(settingStore);
 
 <style lang="scss" scoped>
 .sidebar-logo-container {
-  border: 1px solid blue;
   width: 100%;
   height: 60px;
   display: flex;
@@ -47,8 +48,8 @@ const { collapse } = storeToRefs(settingStore);
     text-decoration: none;
 
     & .sidebar-logo {
-      width: 32px;
-      height: 32px;
+      width: 50px;
+      height: 50px;
     }
 
     & .sidebar-title {

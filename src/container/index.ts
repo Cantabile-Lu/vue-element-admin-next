@@ -2,6 +2,8 @@ import { App } from "vue";
 
 /*加载动画库*/
 import "animate.css";
+import "normalize.css";
+
 /*加载svg-icon*/
 import "virtual:svg-icons-register";
 /*样式初始化*/
