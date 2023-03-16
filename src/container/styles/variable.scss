@@ -6,7 +6,9 @@ $vea-header-height: 60px; // header高度
 
 $vea-footer-height: 60px;
 
-$vea-page-padding: 20px;
-$vea-page-margin: 20px;
+$vea-base-padding: 20px;
+$vea-base-margin: 20px;
+//   160 ?
+$vea-base-min-height: calc(100vh - 160px);
 
 $vea-right-main: calc(100% - $vea-side-min-width)

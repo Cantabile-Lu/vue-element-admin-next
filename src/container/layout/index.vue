@@ -31,26 +31,23 @@ settingStore.setThemeHandler("light");
   &.is-collapse {
     margin-left: $vea-side-min-width;
   }
+
   .vea-main {
+    section {
+      min-height: calc($vea-base-min-height + 60px);
+    }
   }
+
   &.is-fixed-header {
     .vea-main {
       height: calc(100vh - #{$vea-header-height});
     }
   }
 
-  &.is-fixed-footer {
+  &.is-show-footer {
     .vea-main {
-      //height: calc(100vh - #{$vea-footer-height});
-      //margin-bottom: 60px;
-      padding-bottom: 60px;
-      .fixed-footer {
-        //border: 3px solid red;
-        position: fixed;
-        bottom: 0;
-        left: 260px;
-        right: 37px;
-        //width: 100%;
+      section {
+        min-height: $vea-base-min-height;
       }
     }
   }

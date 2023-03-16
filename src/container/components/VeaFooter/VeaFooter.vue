@@ -1,5 +1,5 @@
 <template>
-  <div class="vea-footer">Footer</div>
+  <footer class="vea-footer">Footer</footer>
 </template>
 
 <script lang="ts" setup></script>

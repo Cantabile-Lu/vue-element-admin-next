@@ -7,14 +7,13 @@
       :class="{
         'is-collapse': collapse,
         'is-fixed-header': isFixedHeader,
-        'is-fixed-footer': isFixedFooter
+        'is-show-footer': isFixedFooter
       }"
       class="vea-right-main"
     >
       <vea-header />
-      <div class="vea-main-container">
-        <vea-main />
-      </div>
+
+      <vea-main />
     </div>
   </div>
 </template>
@@ -27,9 +26,6 @@
  * */
 import { useSettingStore } from "@/store/useSetting";
 import { storeToRefs } from "pinia";
-
-// const isFixedHeader = ref(true);
-// const isFixedFooter = ref(true);
 
 const settingStore = useSettingStore();
 const { collapse, isFixedHeader, isFixedFooter } = storeToRefs(settingStore);

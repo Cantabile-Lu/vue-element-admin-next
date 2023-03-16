@@ -32,15 +32,25 @@ html {
     #app {
       height: 100vh;
       overflow: auto;
-      //overflow: hidden;
-      //border: 3px solid blue;
       //@include base-scrollbar;
+      .vea-right-main {
+        .vea-main {
+          width: 100%;
+          overflow: auto;
+          background: #f5f5f5; // todo 全局变量
+          //@include base-scrollbar;
+          padding: $vea-base-padding;
 
-      .vea-main {
-        width: 100%;
-        background: #f5f5f5; // todo 全局变量
-        overflow: auto;
-        //@include base-scrollbar;
+          section {
+            background: #fff;
+            padding: $vea-base-padding;
+          }
+
+          footer {
+            padding: 0 $vea-base-padding;
+            background: #fff;
+          }
+        }
       }
     }
   }
