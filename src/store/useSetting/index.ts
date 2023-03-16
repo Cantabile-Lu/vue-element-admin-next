@@ -13,6 +13,11 @@ const collapse = ref(false);
  */
 const isFixedHeader = ref(true);
 /**
+ * @description: 是否固定footer
+ * @date: 2023/3/16 13:25;
+ */
+const isFixedFooter = ref(true);
+/**
  * @description: 左侧配置展开变量
  * @date: 2023/1/10 11:16;
  */
@@ -35,6 +40,10 @@ export const useSettingStore = defineStore("setting", () => {
 
   function setFixedHeader() {
     isFixedHeader.value = !isFixedHeader.value;
+  }
+
+  function setFixedFooter() {
+    isFixedFooter.value = !isFixedFooter.value;
   }
 
   function settingDrawerChange() {
@@ -76,6 +85,8 @@ export const useSettingStore = defineStore("setting", () => {
     isDark,
     setThemeHandler,
     isFixedHeader,
-    setFixedHeader
+    setFixedHeader,
+    isFixedFooter,
+    setFixedFooter
   };
 });

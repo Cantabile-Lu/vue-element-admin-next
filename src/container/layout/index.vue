@@ -25,29 +25,33 @@ settingStore.setThemeHandler("light");
 <style lang="scss" scoped>
 @import "@/container/styles/variable.scss";
 .common-layout {
-  width: 100%;
-  height: 100%;
-  [class*="vea-horizontal-layout"] {
-    .fixed {
-      border: 3px solid blue;
-      margin-top: $vea-header-height;
-    }
-  }
 }
 ::v-deep().vea-right-main {
-  //border: 1px solid red;
   margin-left: $vea-side-width;
-  .is-fixed-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    //border: 3px solid red;
-  }
   &.is-collapse {
     margin-left: $vea-side-min-width;
-    .is-fixed-header {
-      width: $vea-right-main;
-      //border: 3px solid blue;
+  }
+  .vea-main {
+  }
+  &.is-fixed-header {
+    .vea-main {
+      height: calc(100vh - #{$vea-header-height});
+    }
+  }
+
+  &.is-fixed-footer {
+    .vea-main {
+      //height: calc(100vh - #{$vea-footer-height});
+      //margin-bottom: 60px;
+      padding-bottom: 60px;
+      .fixed-footer {
+        //border: 3px solid red;
+        position: fixed;
+        bottom: 0;
+        left: 260px;
+        right: 37px;
+        //width: 100%;
+      }
     }
   }
 }

@@ -27,5 +27,15 @@ export default {
    *  4: animate__slideInRight
    *  5: animate__fadeInRight
    */
-  asideAnimation: "animate__fadeIn"
+  asideAnimation: "animate__fadeIn",
+
+  /*固定header*/
+  isFixedHeader: true,
+  /*显示header*/
+  showHeader: true,
+
+  /*固定footer*/
+  isFixedFooter: true,
+  /*显示footer*/
+  showFooter: true
 };

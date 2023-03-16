@@ -1,16 +1,23 @@
 <template>
   <div>
     <el-button>Default</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
+    <el-button type="success" @click="settingStore.setFixedFooter()"
+      >设置footer - {{ settingStore.isFixedFooter }}
+    </el-button>
+    <el-button type="info" @click="settingStore.setFixedHeader()"
+      >设置header - {{ settingStore.isFixedHeader }}
+    </el-button>
     <el-button type="warning">Warning</el-button>
     <el-button type="danger">Danger</el-button>
-    <div v-for="item in 100">{{ item }}</div>
+    <div v-for="item in 10">{{ item }}</div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { vnRequest } from "@/utils/request";
+import { useSettingStore } from "@/store/useSetting";
+
+const settingStore = useSettingStore();
 
 interface IRepson {
   data: any;
